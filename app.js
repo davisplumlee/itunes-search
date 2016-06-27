@@ -8,13 +8,17 @@ function getMusic(){
 
 function drawSongs(songList){
   document.getElementById('song-list').innerHTML = '';
-  for (var i = 0; i < 50; i++) {
-    document.getElementById('song-list').innerHTML += '<li> Title: ' + songList[i].title + '<br>';
-    document.getElementById('song-list').innerHTML += '<img src="' + songList[i].albumArt + '" alt="" /><br>';
-    document.getElementById('song-list').innerHTML += 'Artist: ' + songList[i].artist + '<br>';
-    document.getElementById('song-list').innerHTML += 'Collection: ' + songList[i].collection + '<br>';
-    document.getElementById('song-list').innerHTML += 'Price: ' + songList[i].price + '<br>';
-    document.getElementById('song-list').innerHTML += '<audio controls preload="none" style="width:480px;"><source src="' + songList[i].preview + '" type="audio/mp4" /></audio></li>'
+  for (var i = 0; i < songList.length; i++) {
+    var songCard = document.createElement('li');
+    
+    songCard.className = 'jumbotron'
+    songCard.innerHTML += '<img src="' + songList[i].albumArt + '" alt="..." />';
+    songCard.innerHTML += '<h4>Title: ' + songList[i].title + '</h4>';
+    songCard.innerHTML += '<p>Artist: ' + songList[i].artist + '</p>';
+    songCard.innerHTML += '<p>Collection: ' + songList[i].collection + '</p>';
+    songCard.innerHTML += '<p>Price: ' + songList[i].price + '</p>';
+    songCard.innerHTML += '<audio controls preload="none" style="width:60%;"><source src="' + songList[i].preview + '" type="audio/mp4" /></audio>'
+    document.getElementById('song-list').appendChild(songCard)
   }
   
   
