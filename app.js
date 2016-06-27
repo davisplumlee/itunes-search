@@ -8,6 +8,8 @@ function getMusic(){
 
 function drawSongs(songList){
   document.getElementById('song-list').innerHTML = '';
+  document.getElementsByClassName("form")[0].style.padding = "30px";
+
   for (var i = 0; i < songList.length; i++) {
     var songCard = document.createElement('li');
     
