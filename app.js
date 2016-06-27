@@ -26,21 +26,30 @@ function drawSongs(songList){
   }
 }
 
-//Look into how EventListners Work
 
+var playing;
 document.addEventListener('play', function(e){
-    var audios = document.getElementsByTagName('audio');
-    for(var i = 0; i < audios.length; i++){
-        if(audios[i] != e.target){
-            audios[i].pause();
-        }
+    if(playing){
+      playing.pause();
     }
+    playing = e.target;
+    playing.play();
+
+    //THIS CODE WORKS BUT IS INEFFECIENT
+    // var audios = document.getElementsByTagName('audio');
+    // for(var i = 0; i < audios.length; i++){
+    //     if(audios[i] != e.target){
+    //         audios[i].pause();
+    //     }
+    // }
+    
 }, true);
 
-$('#form').submit(function(event){
+$('#form').on('submit', function(event){
 
   // prevent default browser behaviour
   event.preventDefault();
+  event.stopPropagation();
 
   //do stuff with your form here
   getMusic();
