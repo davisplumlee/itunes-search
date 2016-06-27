@@ -34,3 +34,13 @@ document.addEventListener('play', function(e){
         }
     }
 }, true);
+
+$('#form').submit(function(event){
+
+  // prevent default browser behaviour
+  event.preventDefault();
+
+  //do stuff with your form here
+  getMusic();
+
+});
