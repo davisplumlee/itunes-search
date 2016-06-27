@@ -17,11 +17,11 @@ function drawSongs(songList){
     songCard.innerHTML += '<p>Artist: ' + songList[i].artist + '</p>';
     songCard.innerHTML += '<p>Collection: ' + songList[i].collection + '</p>';
     songCard.innerHTML += '<p>Price: ' + songList[i].price + '</p>';
-    songCard.innerHTML += '<audio controls preload="none" style="width:60%;"><source src="' + songList[i].preview + '" type="audio/mp4" /></audio>'
-    document.getElementById('song-list').appendChild(songCard)
+    songCard.innerHTML += '<audio controls preload="none" style="width:60%;"><source src="' + songList[i].preview + '" type="audio/mp4" /></audio>';
+
+    document.getElementById('song-list').appendChild(songCard);
+
   }
-  
-  
 }
 
 //Look into how EventListners Work
