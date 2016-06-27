@@ -35,4 +35,8 @@ body{
     padding: 20px;
 }
 
+::selection {
+  background: #5bc0de; 
+}
+
 
