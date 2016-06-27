@@ -9,6 +9,9 @@ function getMusic(){
 function drawSongs(songList){
   document.getElementById('song-list').innerHTML = '';
   document.getElementsByClassName("form")[0].style.padding = "30px";
+  if (document.getElementById('artist').value == '') {
+    document.getElementsByClassName("form")[0].style.padding = "300px 50px";
+  }
 
   for (var i = 0; i < songList.length; i++) {
     var songCard = document.createElement('li');
@@ -42,7 +45,7 @@ document.addEventListener('play', function(e){
     //         audios[i].pause();
     //     }
     // }
-    
+
 }, true);
 
 $('#form').on('submit', function(event){
