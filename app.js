@@ -32,11 +32,14 @@ function drawSongs(songList){
 
 var playing;
 document.addEventListener('play', function(e){
+
     if(playing){
       playing.pause();
     }
     playing = e.target;
     playing.play();
+
+}, true);
 
     //THIS CODE WORKS BUT IS INEFFECIENT
     // var audios = document.getElementsByTagName('audio');
@@ -45,8 +48,6 @@ document.addEventListener('play', function(e){
     //         audios[i].pause();
     //     }
     // }
-
-}, true);
 
 $('#form').on('submit', function(event){
 
